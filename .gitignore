@@ -1,0 +1,29 @@
+# Compiled output
+front/ArcadiaFrontECF/tmp
+front/ArcadiaFrontECF/out-tsc
+front/ArcadiaFrontECF/dist
+front/ArcadiaFrontECF/bazel-out
+
+# Node
+front/ArcadiaFrontECF/node_modules
+
+# IDEs and editors
+front/ArcadiaFrontECF/.idea/
+front/ArcadiaFrontECF/.vs
+front/ArcadiaFrontECF/.vscode/*
+
+back/ECF_Zoo/API_Arcadia/.vs
+back/ECF_Zoo/API_Arcadia/.idea
+
+# Miscellaneous
+front/ArcadiaFrontECF/.angular/cache
+front/ArcadiaFrontECF/.firebase
+front/ArcadiaFrontECF/.firebaserc
+
+back/ECF_Zoo/API_Arcadia/appsettings.json
+back/ECF_Zoo/logs
+back/ECF_Zoo/mock-front
+
+# System files
+.DS_Store
+Thumbs.db

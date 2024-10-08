@@ -1,0 +1,84 @@
+<main class="d-flex flex-column justify-content-center align-items-center">
+  <h1 class="neucha-regular text-center my-5">Dashboard</h1>
+  <div
+    class="d-flex flex-column flex-md-row justify-content-around align-items-center"
+  >
+    <div
+      class="d-flex flex-column flex-wrap mx-5 my-3"
+      style="
+            border: solid 3px green;
+            border-radius: 10px;
+            max-height: 40vh;
+            min-width: 40vw;
+            overflow-y: scroll;
+          "
+    >
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col" class="text-center">Animal</th>
+          <th scope="col" class="text-center">Nom</th>
+          <th scope="col" class="text-center">Espèce</th>
+          <th scope="col" class="text-center">Classement</th>
+          <th scope="col" class="text-center">Clics</th>
+        </tr>
+        </thead>
+        <tbody>
+          @if (animalStats$ | async; as animalStats) {
+            @for (animalStat of animalStats; track animalStat.id) {
+              <tr>
+                <td scope="row" align="center">
+                  <div class="circle-container-small">
+                    <img [src]="imageApiUrl + animalStat.miniSlug" class="img-fluid" alt=""/>
+                  </div>
+                </td>
+                <td valign="middle" align="center">{{ animalStat.name | titlecase }}</td>
+                <td valign="middle" align="center">{{ animalStat.speciesName | titlecase }}</td>
+                <td valign="middle" align="center">{{ $index + 1 }}</td>
+                <td valign="middle" align="center">{{ animalStat.nbClics }}</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div
+      class="d-flex flex-column flex-wrap mx-5 my-3"
+      style="
+            border: solid 3px green;
+            border-radius: 10px;
+            max-height: 40vh;
+            min-width: 40vw;
+            overflow-y: scroll;
+          "
+    >
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col" class="text-center">Habitat</th>
+          <th scope="col" class="text-center">Nom</th>
+          <th scope="col" class="text-center">Classement</th>
+          <th scope="col" class="text-center">Clics</th>
+        </tr>
+        </thead>
+        <tbody>
+          @if (habitatStats$ | async; as habitatStats) {
+            @for (habitatStat of habitatStats; track habitatStat.id) {
+              <tr>
+                <td scope="row" align="center">
+                  <div class="circle-container-small">
+                    <img [src]="imageApiUrl + habitatStat.miniSlug" class="img-fluid" alt=""/>
+                  </div>
+                </td>
+                <td valign="middle" align="center">{{ habitatStat.name | titlecase }}</td>
+                <td valign="middle" align="center">{{ $index + 1 }}</td>
+                <td valign="middle" align="center">{{ habitatStat.nbClics }}</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

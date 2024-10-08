@@ -1,0 +1,71 @@
+@if (zooServices$ | async; as zooServices) {
+  <main>
+    <h1 class="neucha-regular text-center m-5">Activités</h1>
+    <p class="m-5 text-center">
+      Nous avons pensé à tout pour faire de votre visite un momemt inoubliable. Découvrez les différentes activités
+      proposées au sein du parc !
+    </p>
+
+
+    @for (zs of zooServices; track zs.id) {
+
+      @if ($index % 2 !== 0) {
+
+        <article
+          class="d-flex flex-column flex-md-row justify-content-center align-items-center"
+        >
+          <div class="col-10 col-md-5 p-4">
+            <img [src]=" imageApiUrl + zs.pic" class="img-fluid" alt=""/>
+          </div>
+          <div class="col-10 col-md-5 p-4">
+            <h3 class="neucha-regular">{{ zs.name }}</h3>
+            <p>{{ zs.description }}</p>
+
+            @if (zs.fullPrice !== null) {
+              @if (zs.fullPrice === 0) {
+                <p><strong>Tarif:</strong> gratuit</p>
+              } @else if (zs.fullPrice > 0) {
+                <p><strong>Tarif:</strong> {{ zs.fullPrice }} €</p>
+                <p><strong>Tarif enfant -12 ans:</strong> {{ zs.childPrice }} €</p>
+              }
+            }
+          </div>
+        </article>
+
+      } @else {
+
+        <article
+          class="d-flex flex-column flex-md-row justify-content-center align-items-center"
+        >
+          <div class="col-10 col-md-5 p-4">
+            <h3 class="neucha-regular">{{ zs.name }}</h3>
+            <p>{{ zs.description }}</p>
+
+            @if (zs.fullPrice !== null) {
+              @if (zs.fullPrice === 0) {
+                <p><strong>Tarif:</strong> gratuit</p>
+              } @else if (zs.fullPrice > 0) {
+                <p><strong>Tarif:</strong> {{ zs.fullPrice }} €</p>
+                <p><strong>Tarif enfant -12 ans:</strong> {{ zs.childPrice }} €</p>
+              }
+            }
+
+          </div>
+          <div class="col-10 col-md-5 p-4">
+            <img [src]=" imageApiUrl + zs.pic" class="img-fluid" alt=""/>
+          </div>
+        </article>
+      }
+
+      @if (!$last) {
+        <div class="separator d-flex flex-md-row justify-content-center align-items-center">
+          <img src="assets/left_leaf_separator2.png" class="img-fluid"/>
+          <img src="assets/right_leaf_separator2.png" class="img-fluid" alt=""/>
+        </div>
+      }
+    }
+
+  </main>
+} @else {
+  <app-loading-spinner></app-loading-spinner>
+}

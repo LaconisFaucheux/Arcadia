@@ -1,0 +1,17 @@
+#last-homepage-article {
+  margin-top: 5vh;
+  margin-bottom: 0;
+  background-image: url("/assets/starbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#otter-separator {
+  height: 45vh;
+  background-image: url("/assets/otters.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Ce fichier est utilisé par le processus de publication/package de votre projet web. Vous pouvez personnaliser le comportement de ce processus
+en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <History>True|2024-10-04T14:19:33.7916659Z||;True|2024-10-01T15:07:11.0850256+02:00||;True|2024-10-01T15:04:09.7459989+02:00||;True|2024-09-24T15:20:08.9733399+02:00||;False|2024-09-24T15:17:42.4969278+02:00||;True|2024-09-09T21:51:02.1892233+02:00||;True|2024-09-09T20:51:02.0383232+02:00||;True|2024-09-04T22:31:21.3572143+02:00||;True|2024-09-04T21:32:31.5706117+02:00||;True|2024-09-04T21:10:59.2898198+02:00||;True|2024-09-04T21:09:39.0346362+02:00||;True|2024-09-04T21:07:11.5296848+02:00||;True|2024-09-04T20:51:13.3507268+02:00||;True|2024-09-04T20:12:50.9219168+02:00||;True|2024-09-03T14:11:52.5262461+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ArcadiaConnect">
+      <Value>Data Source=arcadia-db-serverless.database.windows.net,1433%3bInitial Catalog=arcadia-db%3bUser ID=NicolasFrotey%3bPassword=IO54X2aqj3z6er</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="API_Arcadia.Models.Data.AuthDbContext">
+      <Value>Data Source=arcadia-db-serverless.database.windows.net,1433%3bInitial Catalog=arcadia-db%3bUser ID=NicolasFrotey%3bPassword=IO54X2aqj3z6er</Value>
+    </EFMigrations>
+    <EFMigrations Include="API_Arcadia.Models.Data.ContextArcadia">
+      <Value>Data Source=arcadia-db-serverless.database.windows.net,1433%3bInitial Catalog=arcadia-db%3bUser ID=NicolasFrotey%3bPassword=IO54X2aqj3z6er</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,239 @@
+<main class="roboto-regular">
+  <section class="d-flex flex-column col-11 justify-content-center align-items-center mx-auto">
+    <div class="col-12 d-flex flex-lg-row flex-column align-items-center justify-content-around m-5">
+      <article class="m-3 col-12 col-md-5">
+        <h2 class="mb-4 text-center neucha-regular">
+          Le Zoo ARCADIA, un lieu préservé pour s'émerveiller
+        </h2>
+        <p class="text-center roboto-regular">
+          Niché au coeur d'un espace arboré de 18 hectares dans la légendaire forêt de Brocéliande, le Parc Zoologique
+          Arcadia est la réalisation de la vision de José, désireux depuis l'enfance de partager sa passion des animaux
+          avec le public. Attachant une importance de premier plan au bien être de nos pensionnaires, nous vous proposons
+          une expérience unique dans un cadre idyllique, dans les pas de Merlin, Viviane et Arthur, pour vous
+          émerveiller de la diversité animale de notre monde
+          @if(habitats$ | async; as habitats){
+            <span>au gré de nos {{habitats.length}} habitats (</span>
+            @for(h of habitats; track h.id){
+            <span>{{h.name}}</span>
+            @if(!$last){
+              <span>, </span>
+            }
+          }
+            <span>) </span>
+          }
+          @if(animalListLength$ | async; as animalListLength){
+            <span>qui regroupent {{animalListLength}} merveilleux animaux</span>
+          }!
+          <br>
+          <br>
+          <span class="fs-5"> Comme nos 450 000 visiteurs annuels, venez passer une escapade inoubliable en famille au<br>
+            <span class="neucha-regular fw-bold">Parc Zoologique Arcadia</span> !</span>
+        </p>
+      </article>
+      <article class="m-3 col-12 col-md-5">
+        <h2 class="neucha-regular mb-4 text-center">Quel temps fait-il chez Arcadia?</h2>
+
+        @if (meteo$ | async; as meteo) {
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <img [src]="getMeteoPic(meteo.forecast.weather)" class="img-fluid col-7">
+            <div class="col-12 d-flex flex-row justify-content-around align-items-center">
+              <p class="fs-3 text-center fw-bold"><span class="text-info">{{ meteo.forecast.tmin }}°</span> - <span
+                class="text-danger">{{ meteo.forecast.tmax }}°</span></p>
+            </div>
+          </div>
+        } @else {
+          <app-loading-spinner></app-loading-spinner>
+        }
+
+      </article>
+    </div>
+
+    <h2 class="text-center neucha-regular mt-5">Pratique!</h2>
+    <div class="col-12 d-flex flex-lg-row flex-column align-items-center justify-content-around">
+      <article class="col-12 col-md-6 d-flex flex-column align-items-center">
+        <h5>Où sommes-nous?</h5>
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2668.3576274383267!2d-2.1705188874993877!3d48.02611917111142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480fad0272ced98d%3A0x4249fa03c2c84724!2sRue%20de%20l&#39;Enchanteur%20Merlin%2C%2035380%20Paimpont!5e0!3m2!1sfr!2sfr!4v1718042821150!5m2!1sfr!2sfr"
+            style="border: 0; margin: auto; border-radius: 10px"
+            height="500"
+            width="300"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </article>
+      <article class="col-12 col-md-6 d-flex flex-column align-items-center p-3">
+        <h5 class="text-center my">Horaires d'ouverture</h5>
+
+        <!--            horaires-->
+        <table class="table text-center">
+          <tbody>
+            @if (horaires$ | async; as horaires) {
+              @for (h of horaires; track h.id) {
+                <tr>
+                  <th scope="row">{{ h.dayOfWeek }}</th>
+
+                  @if (h.morningOpening === null) {
+                    <td>Fermé</td>
+                  } @else if (h.morningClosing?.getTime() == h.afternoonOpening?.getTime()) {
+                    <td>{{ h.morningOpening | date:'HH:mm':'':'fr-FR' }}</td>
+                  } @else {
+                    <td>{{ h.morningOpening | date:'HH:mm' :'' :'fr-FR' }}
+                      - {{ h.morningClosing | date:'HH:mm' :'' :'fr-FR' }}
+                    </td>
+                  }
+
+                  @if (h.afternoonOpening === null) {
+                    <td>Fermé</td>
+                  } @else if (h.morningClosing?.getTime() == h.afternoonOpening.getTime()) {
+                    <td>{{ h.afternoonClosing | date:'HH:mm' :'' :'fr-FR' }}</td>
+                  } @else {
+                    <td>{{ h.afternoonOpening | date:'HH:mm' :'' :'fr-FR' }}
+                      - {{ h.afternoonClosing | date:'HH:mm' :'' :'fr-FR' }}
+                    </td>
+                  }
+
+                </tr>
+              }
+            }
+
+          </tbody>
+        </table>
+        <div class="col-12 d-flex flex-column align-items-center my-5">
+
+          @if (isOpen$ | async; as isOpen) {
+            <h5>Actuellement ouvert</h5>
+            <p class="fs-1">✅</p>
+          } @else {
+            <h5>Actuellement fermé</h5>
+            <p class="fs-1">❌</p>
+          }
+
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <div id="otter-separator"></div>
+
+  <!--reviews-->
+  @if (reviews$ | async; as reviews) {
+    @if (reviews.length > 0) {
+      <h2 class="text-center m-5 neucha-regular">Nos visiteurs témoignent:</h2>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel carousel-dark slide"
+        data-bs-ride="true"
+        style="min-height: 25vh;"
+      >
+        <div class="carousel-indicators">
+
+          @for (r of reviews; track $index) {
+            @if ($first) {
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                [attr.data-bs-slide-to]="$index"
+                class="active"
+                aria-current="true"
+                [attr.aria-label]="'Slide ' + ($index + 1)"
+              ></button>
+            } @else {
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                [attr.data-bs-slide-to]="$index"
+                [attr.aria-label]="'Slide ' + ($index + 1)"
+              ></button>
+            }
+          }
+
+        </div>
+
+
+        <div class="carousel-inner">
+
+          @for (r of reviews; track $index) {
+            <div [class]="$index === 0 ? ' carousel-item active' : 'carousel-item'">
+              <div class="d-flex flex-column col-12 justify-content-center align-items-center">
+
+                <h4 class="text-center">{{ r.pseudo }}</h4>
+                <p class="text-center col-8">{{ r.content }}</p>
+
+                <div class="d-flex flex-row mb-5">
+                  @for (s of getStars(r.note); track $index) {
+                    <i class="fa-solid fa-leaf text-success mx-1"></i>
+                  }
+                  @for (us of getUnStars(r.note); track $index) {
+                    <i class="fa-solid fa-leaf text-warning mx-1"></i>
+                  }
+                </div>
+              </div>
+            </div>
+          }
+
+
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <div
+        class="d-flex justify-content-center align-items-center col-6 mx-auto"
+      >
+        <button
+          class="btn btn-outline-success m-5"
+          [routerLink]="['review-creation']"
+        >
+          Donnez-nous votre avis!
+        </button>
+      </div>
+    }
+  }
+
+  <!--  randomAnimal-->
+  @if (randomAnimal$ | async; as randomAnimal) {
+    <article
+      id="last-homepage-article"
+      class="d-flex flex-column justify-content-center align-items-center p-5"
+    >
+      <h2 class="neucha-regular m-4">Focus sur...</h2>
+      <div class="card" style="width: 40vh">
+        <img
+          [src]="imageApiUrl + randomAnimal.pics[0].slug"
+          class="card-img-top"
+          [alt]="randomAnimal.speciesData.name"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ randomAnimal.name }}</h5>
+          <h6 class="card-title">{{ randomAnimal.speciesData.name }}</h6>
+          <p class="card-text">{{ randomAnimal.speciesData.description | charLimiter : 300 }}
+          </p>
+          <a [routerLink]="['animaux', randomAnimal.id]"
+             class="btn btn-success">En savoir plus!</a>
+        </div>
+      </div>
+    </article>
+  }
+
+</main>

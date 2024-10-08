@@ -1,0 +1,109 @@
+@if (habitat$ | async; as habitat) {
+
+  <main>
+    <section>
+      <h1 class="neucha-regular text-center m-5">{{ habitat.name | titlecase }}</h1>
+      <article
+        class="d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="col-10 p-3">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+
+
+              <div class="carousel-item active">
+                <img [src]="imageApiUrl + habitat.pics[0].slug" class="d-block" alt="..."/>
+              </div>
+              <div class="carousel-item">
+                <img [src]="imageApiUrl + habitat.pics[0].slug" class="d-block" alt="..."/>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-10 p-3">
+          <div>
+            <p>
+              {{ habitat.description }}
+            </p>
+          </div>
+
+          <div>
+            <h5>Nos animaux qui habitent là:</h5>
+            <div
+              class="d-flex flex-row flex-wrap align-items-center justify-content-around"
+            >
+              @if (inhabitants$ | async; as inhabitants) {
+                @for (a of inhabitants; track a.id; ) {
+
+                  <div
+                    class="d-flex flex-column align-items-center clickable-div"
+                  >
+                    <div
+                      class="circle-container-detail"
+                      [routerLink]="['/','animaux', a.id]"
+                    >
+                      <img [src]="imageApiUrl + a.pics[0].miniSlug" class="img-fluid" alt=""/>
+                    </div>
+                    <p class="neucha-regular text-center">
+                      {{ a.name }}<br/>{{ a.speciesData.name }}
+                    </p>
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+} @else {
+  <main class="d-flex justify-content-center align-items-center">
+    <app-loading-spinner></app-loading-spinner>
+  </main>
+}
