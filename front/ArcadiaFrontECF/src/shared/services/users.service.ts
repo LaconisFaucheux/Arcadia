@@ -95,10 +95,10 @@ export class UsersService {
             to: user.email,
             subject: "Bienvenue dans l'équipe Arcadia!",
           }
-          console.log(mail);
+          //console.log(mail);
           this.emailSender.sendMailAsAdmin(mail);
 
-          this.router.navigateByUrl('admin/employees')
+          this.router.navigateByUrl('/admin/employees')
         },
         error: (error) => {
          this.toast.showToast('Échec de la création de l\'employé', false);
