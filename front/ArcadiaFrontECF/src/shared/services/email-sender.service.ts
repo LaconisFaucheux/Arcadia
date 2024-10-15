@@ -31,7 +31,7 @@ export class EmailSenderService {
       .subscribe({
         next: (response) => {
           this.toast.showToast('Email envoyé avec succès', true)
-          this.router.navigateByUrl('/')
+          this.router.navigateByUrl('/admin/employees')
         },
         error: (error) => {
           this.toast.showToast('Echec de l\'envoi du mail', false);
