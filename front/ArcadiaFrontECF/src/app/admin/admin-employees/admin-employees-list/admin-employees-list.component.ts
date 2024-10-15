@@ -46,8 +46,8 @@ export class AdminEmployeesListComponent {
     this.employees$ = this.usersService.users$;
     this.roles$ = this.usersService.roles$;
     this.roles$.subscribe(roles => {
+      this.filters = [];
       for (let role of roles) {
-        this.filters = [];
         this.filters.push(role.name);
       }
     });
