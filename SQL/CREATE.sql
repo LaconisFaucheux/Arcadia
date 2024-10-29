@@ -1,4 +1,4 @@
--- Cr�er la base de donn�es si elle n'existe pas
+-- Créer la base de données si elle n'existe pas
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Arcadia')
 BEGIN
     CREATE DATABASE Arcadia;
@@ -23,7 +23,7 @@ IF OBJECT_ID('AnimalImages', 'U') IS NOT NULL DROP TABLE AnimalImages;
 IF OBJECT_ID('VetVisits', 'U') IS NOT NULL DROP TABLE VetVisits;
 IF OBJECT_ID('EmployeeFeedings', 'U') IS NOT NULL DROP TABLE EmployeeFeedings;
 
--- Cr�er la table ZooServices
+-- Créer la table ZooServices
 CREATE TABLE ZooServices (
     Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     Name VARCHAR(100) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE ZooServices (
     Pic VARCHAR(150) NOT NULL
 );
 
--- Cr�er la table Reviews
+-- Créer la table Reviews
 CREATE TABLE Reviews (
     Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     Pseudo VARCHAR(100) NOT NULL,
