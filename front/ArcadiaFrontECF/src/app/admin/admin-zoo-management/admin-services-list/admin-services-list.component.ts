@@ -6,6 +6,8 @@ import {AnimalFilterPipe} from "../../../../shared/pipes/animal-filter.pipe";
 import {AsyncPipe, TitleCasePipe} from "@angular/common";
 import {LoadingSpinnerComponent} from "../../../loading-spinner/loading-spinner.component";
 import {RouterLink} from "@angular/router";
+import {IUser} from "../../../../shared/interfaces/user.interface";
+import {AuthService} from "../../../../shared/services/auth.service";
 
 @Component({
   selector: 'app-admin-services-list',
@@ -22,9 +24,11 @@ import {RouterLink} from "@angular/router";
 })
 export class AdminServicesListComponent {
   public services$: Observable<IZooService[]> = new Observable<IZooService[]>();
+  public user$: Observable<IUser | undefined> = new Observable<IUser | undefined>();
 
-  constructor(private zooServices: ZooServiceService) {
+  constructor(private zooServices: ZooServiceService, private authService: AuthService) {
     this.services$ = this.zooServices.zooServices$
+    this.user$ = this.authService.user$;
   }
 
   ngOnInit() {
@@ -40,7 +44,7 @@ export class AdminServicesListComponent {
   }
 
   public deleteService(id: number | undefined): void {
-    if (confirm('Voulez vous vraiment supprimer cette statistique?')) {
+    if (confirm('Voulez vous vraiment supprimer ce service?')) {
       if (id) this.zooServices.deleteService(id);
     }
   }

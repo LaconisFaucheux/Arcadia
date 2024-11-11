@@ -76,7 +76,7 @@ namespace API_Arcadia.Controllers
         // POST: api/ZooServices
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ZooService>> PostZooService([FromForm]ServiceDTO zooService)
         {
             try
@@ -93,7 +93,7 @@ namespace API_Arcadia.Controllers
 
         // DELETE: api/ZooServices/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteZooService(int id)
         {
             try

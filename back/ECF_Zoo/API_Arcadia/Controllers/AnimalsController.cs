@@ -66,7 +66,7 @@ namespace API_Arcadia.Controllers
         // PUT: api/Animals/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutAnimal(int id, [FromForm]AnimalDTO animal)
         {
             if (id != animal.Id)
@@ -93,7 +93,7 @@ namespace API_Arcadia.Controllers
         // POST: api/Animals
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Animal>> PostAnimal([FromForm] AnimalDTO animal)
         {
             try
@@ -109,7 +109,7 @@ namespace API_Arcadia.Controllers
 
         // DELETE: api/Animals/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAnimal(int id)
         {
 

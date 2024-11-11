@@ -51,7 +51,7 @@ namespace API_Arcadia.Controllers
         // PUT: api/Habitats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutHabitat(int id, HabitatDTO habitat)
         {
             if (id != habitat.Id)
@@ -78,7 +78,7 @@ namespace API_Arcadia.Controllers
         // POST: api/Habitats
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Habitat>> PostHabitat([FromForm] HabitatDTO habitat)
         {
             try
@@ -95,7 +95,7 @@ namespace API_Arcadia.Controllers
 
         // DELETE: api/Habitats/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteHabitat(int id)
         {
             try

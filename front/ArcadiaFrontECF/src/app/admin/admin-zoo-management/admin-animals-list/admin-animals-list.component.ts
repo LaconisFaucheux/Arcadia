@@ -10,6 +10,8 @@ import {AnimalFilterPipe} from "../../../../shared/pipes/animal-filter.pipe";
 import {IHabitat} from "../../../../shared/interfaces/habitat.interface";
 import {HabitatService} from "../../../../shared/services/habitat.service";
 import {DashboardService} from "../../../../shared/services/dashboard.service";
+import {IUser} from "../../../../shared/interfaces/user.interface";
+import {AuthService} from "../../../../shared/services/auth.service";
 
 @Component({
   selector: 'app-admin-animals-list',
@@ -30,10 +32,13 @@ export class AdminAnimalsListComponent {
   public animals$: Observable<IAnimal[]> = new Observable<IAnimal[]>();
   public habitats$: Observable<IHabitat[]> = new Observable<IHabitat[]>();
   public filters: number[] = [];
+  public user$: Observable<IUser | undefined> = new Observable<IUser | undefined>();
 
   constructor(private animalService: AnimalService,
               protected habitatService: HabitatService,
-              private dashboardService: DashboardService) {
+              private dashboardService: DashboardService,
+              private authService: AuthService) {
+    this.user$ = authService.user$;
     this.animals$ = animalService.animals$;
     this.habitats$ = habitatService.habitats$
     this.habitats$.subscribe((habitats) => {
