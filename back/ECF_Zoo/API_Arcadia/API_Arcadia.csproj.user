@@ -11,6 +11,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>API_Arcadia.Models.Data.ContextArcadia</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>D:\DEV\back\ECF_Zoo\API_Arcadia\Properties\PublishProfiles\API-Arcadia - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\DEV\RepoArcadiaFinal\back\ECF_Zoo\API_Arcadia\Properties\PublishProfiles\API-Arcadia - Web Deploy1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

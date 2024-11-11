@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DNViJzEWG1k=",
+  "dgSpecHash": "+yuHzmHSi8Q=",
   "success": true,
-  "projectFilePath": "D:\\DEV\\back\\ECF_Zoo\\API_Arcadia\\API_Arcadia.csproj",
+  "projectFilePath": "D:\\DEV\\RepoArcadiaFinal\\back\\ECF_Zoo\\API_Arcadia\\API_Arcadia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lacon\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Lacon\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
