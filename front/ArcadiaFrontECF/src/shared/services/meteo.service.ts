@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {IMeteo} from "../interfaces/meteo.interface";
 import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {ApiService} from "./api.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class MeteoService {
 
   private meteo: BehaviorSubject<IMeteo | null> = new BehaviorSubject<IMeteo | null>(null);
   public meteo$ : Observable<IMeteo|null> = this.meteo as Observable<IMeteo|null>
+
+  public apiUrl: string = '';
 
   public weatherCodes: { [key: number]: string }= {
     0: 'sun',
@@ -100,11 +103,12 @@ export class MeteoService {
   }
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private apiService: ApiService) {
+    this.apiUrl = this.apiService.getMeteoApiUrl();
   }
 
   public fetchMeteo(){
-    this.http.get<IMeteo>('https://api.meteo-concept.com/api/forecast/daily/0?latlng=48.01667%2C-2.18333&world=false&token=21334663c3f36b33a33fd7b22c3934a4ad770c359dee95613b74d1bfb7059623')
+    this.http.get<IMeteo>(this.apiUrl)
       .subscribe(meteo => this.meteo.next(meteo));
   }
 }

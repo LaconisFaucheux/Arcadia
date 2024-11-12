@@ -8,6 +8,7 @@ export class ApiService {
 
   private apiUrl = environment.apiUrl;
   private imageApiUrl = environment.imageApiUrl;
+  private meteoApiUrl = environment.meteoApiUrl;
 
   constructor() { }
 
@@ -17,5 +18,9 @@ export class ApiService {
 
   public getImageApiUrl() {
     return this.imageApiUrl;
+  }
+
+  public getMeteoApiUrl() {
+    return this.meteoApiUrl;
   }
 }

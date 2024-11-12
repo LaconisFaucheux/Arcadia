@@ -8,43 +8,46 @@
         <p class="text-center roboto-regular">
           Niché au coeur d'un espace arboré de 18 hectares dans la légendaire forêt de Brocéliande, le Parc Zoologique
           Arcadia est la réalisation de la vision de José, désireux depuis l'enfance de partager sa passion des animaux
-          avec le public. Attachant une importance de premier plan au bien être de nos pensionnaires, nous vous proposons
+          avec le public. Attachant une importance de premier plan au bien être de nos pensionnaires, nous vous
+          proposons
           une expérience unique dans un cadre idyllique, dans les pas de Merlin, Viviane et Arthur, pour vous
           émerveiller de la diversité animale de notre monde
-          @if(habitats$ | async; as habitats){
-            <span>au gré de nos {{habitats.length}} habitats (</span>
-            @for(h of habitats; track h.id){
-            <span>{{h.name}}</span>
-            @if(!$last){
-              <span>, </span>
+          @if (habitats$ | async; as habitats) {
+            <span>au gré de nos {{ habitats.length }} habitats (</span>
+            @for (h of habitats; track h.id) {
+              <span>{{ h.name }}</span>
+              @if (!$last) {
+                <span>, </span>
+              }
             }
-          }
             <span>) </span>
           }
-          @if(animalListLength$ | async; as animalListLength){
-            <span>qui regroupent {{animalListLength}} merveilleux animaux</span>
+          @if (animalListLength$ | async; as animalListLength) {
+            <span>qui regroupent {{ animalListLength }} merveilleux animaux</span>
           }!
           <br>
           <br>
-          <span class="fs-5"> Comme nos 450 000 visiteurs annuels, venez passer une escapade inoubliable en famille au<br>
+          <span
+            class="fs-5"> Comme nos 450 000 visiteurs annuels, venez passer une escapade inoubliable en famille au<br>
             <span class="neucha-regular fw-bold">Parc Zoologique Arcadia</span> !</span>
         </p>
       </article>
       <article class="m-3 col-12 col-md-5">
         <h2 class="neucha-regular mb-4 text-center">Quel temps fait-il chez Arcadia?</h2>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          @if (meteo$ | async; as meteo) {
 
-        @if (meteo$ | async; as meteo) {
-          <div class="d-flex flex-column justify-content-center align-items-center">
             <img [src]="getMeteoPic(meteo.forecast.weather)" class="img-fluid col-7">
             <div class="col-12 d-flex flex-row justify-content-around align-items-center">
               <p class="fs-3 text-center fw-bold"><span class="text-info">{{ meteo.forecast.tmin }}°</span> - <span
                 class="text-danger">{{ meteo.forecast.tmax }}°</span></p>
             </div>
-          </div>
-        } @else {
-          <app-loading-spinner></app-loading-spinner>
-        }
 
+          } @else {
+
+            <app-loading-spinner></app-loading-spinner>
+          }
+        </div>
       </article>
     </div>
 
