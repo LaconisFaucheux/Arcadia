@@ -5,8 +5,7 @@
       "secretStore": "AzureAppSettings",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/arcadia-db-serverless/databases/arcadia-db",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:ArcadiaConnect",
-      "dynamicId": null
+      "connectionId": "ConnectionStrings:ArcadiaConnect"
     }
   }
 }
