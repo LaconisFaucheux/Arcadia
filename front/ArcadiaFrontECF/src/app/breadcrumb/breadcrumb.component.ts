@@ -41,6 +41,8 @@ export class BreadcrumbComponent {
       this.routesDictionary.set('activites', 'Activités');
       this.routesDictionary.set('philosophie', 'Philosophie');
       this.routesDictionary.set('review-creation', 'Rédiger un avis');
+    this.routesDictionary.set('mentions-legales', 'Mentions Légales');
+    this.routesDictionary.set('politique-confidentialite', 'Politique de Confidentialité');
     this.routesDictionary.set('auth', 'Connexion');
   }
 

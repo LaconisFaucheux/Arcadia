@@ -37,7 +37,7 @@
         <div class="d-flex flex-column justify-content-center align-items-center">
           @if (meteo$ | async; as meteo) {
 
-            <img [src]="getMeteoPic(meteo.forecast.weather)" class="img-fluid col-7">
+            <img [src]="getMeteoPic(meteo.forecast.weather)" class="img-fluid col-7" [alt]="meteo.forecast.weather">
             <div class="col-12 d-flex flex-row justify-content-around align-items-center">
               <p class="fs-3 text-center fw-bold"><span class="text-info">{{ meteo.forecast.tmin }}°</span> - <span
                 class="text-danger">{{ meteo.forecast.tmax }}°</span></p>

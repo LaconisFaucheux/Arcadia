@@ -29,7 +29,7 @@
               <tr>
                 <td scope="row" align="center">
                   <div class="circle-container-small">
-                    <img [src]="imageApiUrl + animalStat.miniSlug" class="img-fluid" alt=""/>
+                    <img [src]="imageApiUrl + animalStat.miniSlug" class="img-fluid" [alt]="animalStat.speciesName"/>
                   </div>
                 </td>
                 <td valign="middle" align="center">{{ animalStat.name | titlecase }}</td>
@@ -68,7 +68,7 @@
               <tr>
                 <td scope="row" align="center">
                   <div class="circle-container-small">
-                    <img [src]="imageApiUrl + habitatStat.miniSlug" class="img-fluid" alt=""/>
+                    <img [src]="imageApiUrl + habitatStat.miniSlug" class="img-fluid" [alt]="habitatStat.name"/>
                   </div>
                 </td>
                 <td valign="middle" align="center">{{ habitatStat.name | titlecase }}</td>

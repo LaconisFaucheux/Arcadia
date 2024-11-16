@@ -13,8 +13,9 @@ Ce projet a été réalisé avec les IDE VS Code, Visual Studio 2022 et Rider (J
 #### Logiciels
 
 Installation de [Git](https://github.com/LaconisFaucheux/ECF_Zoo)
-Installation de [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/) et plus particulièrement de la charge de travail `ASP.NET`.
-Installation de [SQL Server](https://www.microsoft.com/fr-fr/sql-server/sql-server-downloads)
+Installation de [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/) et plus particulièrement de la charge de travail `ASP.NET`. L'installation de `.NET` se fait en même temps.
+Installation de [SQL Server](https://www.microsoft.com/fr-fr/sql-server/sql-server-downloads).
+Installation de [MongoDB Community Edition](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/).
 
 ### ETAPES
 

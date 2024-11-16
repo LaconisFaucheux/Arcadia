@@ -30,7 +30,7 @@ export class AuthComponent {
       .subscribe({
         next: (res) => {
           //Set auth cookie with ngx cookie service
-          this.cookieService.set('Authorization', `Bearer ${res.token}`, undefined, '/', undefined, true, 'Strict');
+          this.cookieService.set('Authorization', `Bearer ${res.token}`, undefined, '/', undefined, true, 'Strict');//SameSite =  true, CSRF Protection
           //console.log(res.token)
           //Set user
           this.authService.setUser({id: res.userId, email: res.email, roles: res.roles});

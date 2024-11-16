@@ -75,6 +75,7 @@ namespace API_Arcadia
                         ValidateIssuer = true,
                         ValidateAudience = true,
                         ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero,
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = builder.Configuration["Jwt:Issuer"],
                         ValidAudience = builder.Configuration["Jwt:Audience"],

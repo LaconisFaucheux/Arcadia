@@ -6,7 +6,7 @@
       <a class="btn btn-outline-success m-2 m-lg-5" routerLink="new">Rédiger un nouveau rapport</a>
     </div>
 
-    <div class="flex flex-row mx-auto mt-3">
+    <div id="filter-area" class="flex flex-row mx-auto mt-3">
       <label>Filtrer par espèce: </label>
       <select class="mx-2" (change)="setSelectedSpecies($event)">
         <option [value]="0">Toutes</option>

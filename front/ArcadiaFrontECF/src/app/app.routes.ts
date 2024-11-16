@@ -70,6 +70,8 @@ import {
   AnimalFeedingFormComponent
 } from "./admin/admin-zoo-management/animal-feeding-form/animal-feeding-form.component";
 import {ContactFormComponent} from "./contact-form/contact-form.component";
+import {LegalComponent} from "./legal/legal.component";
+import {ConfidentialityComponent} from "./confidentiality/confidentiality.component";
 
 export const routes: Routes = [
   {path: "", component: HomePageComponent, pathMatch: "full"},
@@ -94,6 +96,8 @@ export const routes: Routes = [
   {path: "review-creation", component: ReviewFormComponent},
   {path: "auth", component: AuthComponent},
   {path: "contact", component: ContactFormComponent},
+  {path: "mentions-legales", component: LegalComponent},
+  {path: "politique-confidentialite", component: ConfidentialityComponent},
   {
     path: "admin",
     component: AdminComponent,

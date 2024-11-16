@@ -5,14 +5,14 @@
     <div class="d-flex flex-row flex-wrap justify-content-around mb-5 col-10">
 
       <div class="card my-3" style="width: 18rem;">
-        <img src="assets/lock.jpg" class="card-img-top" alt="...">
+        <img src="assets/lock.jpg" class="card-img-top" alt="Image de verrou">
         <div class="card-body d-flex justify-content-center">
           <a class="btn btn-success" routerLink="change-password">Changer mon mot de passe</a>
         </div>
       </div>
 
       <div class="card my-3" style="width: 18rem;">
-        <img src="assets/feeding.png" class="card-img-top" alt="...">
+        <img src="assets/feeding.png" class="card-img-top" alt="Lion qui attend son repas">
         <div class="card-body d-flex justify-content-center">
           <a routerLink="zoo-management/feedings" class="btn btn-success">Nourrir les animaux</a>
         </div>
@@ -21,56 +21,56 @@
       @if (roles.includes('Admin')) {
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/SansTitre-1.jpg" class="card-img-top" alt="...">
+          <img src="assets/SansTitre-1.jpg" class="card-img-top" alt="Lion">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/animals/new" >Ajouter un animal</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/habitat.jpg" class="card-img-top" alt="...">
+          <img src="assets/habitat.jpg" class="card-img-top" alt="Forêt">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/habitats/new">Ajouter un habitat</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/employees.jpg" class="card-img-top" alt="...">
+          <img src="assets/employees.jpg" class="card-img-top" alt="Employés de bureau">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="employees/register">Ajouter un collaborateur</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/stats.jpg" class="card-img-top" alt="...">
+          <img src="assets/stats.jpg" class="card-img-top" alt="Graphique de statistiques">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="dashboard">Consulter le Dashboard</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/carriage.jpg" class="card-img-top" alt="...">
+          <img src="assets/carriage.jpg" class="card-img-top" alt="Balade en calèche">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/services/new">Ajouter un Service</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/clocks.jpg" class="card-img-top" alt="...">
+          <img src="assets/clocks.jpg" class="card-img-top" alt="Horloge">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/opening-hours">Modifier les horaires</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/reviews.png" class="card-img-top" alt="...">
+          <img src="assets/reviews.png" class="card-img-top" alt="Étoiles">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="reviews">Gérer les Avis</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/vet.jpg" class="card-img-top" alt="...">
+          <img src="assets/vet.jpg" class="card-img-top" alt="Vétérinaires">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="vet-reports">Rapports Vétérinaires</a>
           </div>
@@ -78,14 +78,14 @@
       } @else if (roles.includes('Employee')) {
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/carriage.jpg" class="card-img-top" alt="...">
+          <img src="assets/carriage.jpg" class="card-img-top" alt="Balade en calèche">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/services">Modifier un Service</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/reviews.png" class="card-img-top" alt="...">
+          <img src="assets/reviews.png" class="card-img-top" alt="Étoiles">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="reviews">Gérer les Avis</a>
           </div>
@@ -94,21 +94,21 @@
       } @else if (roles.includes('Vet')) {
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/SansTitre-1.jpg" class="card-img-top" alt="...">
+          <img src="assets/SansTitre-1.jpg" class="card-img-top" alt="Lion">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="zoo-management/animals">Consulter les animaux</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/vet.jpg" class="card-img-top" alt="...">
+          <img src="assets/vet.jpg" class="card-img-top" alt="Vétérinaires">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="vet-reports">Rapports vétérinaires</a>
           </div>
         </div>
 
         <div class="card my-3" style="width: 18rem;">
-          <img src="assets/vet.jpg" class="card-img-top" alt="...">
+          <img src="assets/vet.jpg" class="card-img-top" alt="Vétérinaires">
           <div class="card-body d-flex justify-content-center">
             <a class="btn btn-success" routerLink="vet-reports/new">Rédiger un rapport vétérinaire</a>
           </div>
