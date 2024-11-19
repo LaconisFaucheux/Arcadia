@@ -54,6 +54,6 @@ La partie Front fonctionnera en tant que telle mais la quasi totalité des fonct
 
 1. Cloner le repo: `git clone https://github.com/LaconisFaucheux/ArcadiaFrontECF.git`
 2. Exécuter la commande `npm install` dans le repo
-3. Contactez moi pour récupérer les fichier `environnement.ts` et `environnement.prod.ts`
+3. Contactez moi pour récupérer les fichier `environnement.ts` et `environnement.prod.ts` à coller dans `RepoArcadiaFinal\front\src\environnements`
 4. Exécuter la commande `ng serve` dans le repo
 5. Votre application est prête à être testée à l'URL [localhost:4200](https://localhost:4200)

@@ -42,7 +42,6 @@ export class AdminChangePasswordComponent {
 
   submit() {
     this._canSend = this.isPwdCompliant && this.matchingPasswords;
-    console.log(this._canSend)
     if(!this._canSend) {return;}
 
     // if (this.NewPassword.value !== this.NewPasswordCheck.value) {
