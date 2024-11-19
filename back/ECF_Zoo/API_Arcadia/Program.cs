@@ -56,12 +56,11 @@ namespace API_Arcadia
                 .AddDefaultTokenProviders();
             builder.Services.Configure<IdentityOptions>(opt =>
             {
-                opt.Password.RequireDigit = false;
-                opt.Password.RequireLowercase = false;
-                opt.Password.RequireUppercase = false;
-                opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequiredLength = 6;
-                opt.Password.RequiredUniqueChars = 1;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase = true;
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequiredLength = 12;
             });
 
             //Authentication Config

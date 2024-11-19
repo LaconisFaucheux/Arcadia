@@ -48,8 +48,15 @@
             id="Password"
             formControlName="password"
             aria-describedby="emailHelp"
+            (blur)="setPotentialPwd($event)"
+            required
           />
         </div>
+
+        @if(!isPwdCompliant && potentialPassword !== ""){
+          <p class="text-danger fst-italic text-center small">Le mot de passe doit faire au moins 12 caractères et contenir au moins un nombre, au moins " +
+            "une majuscule, au moins une minuscule et au moins un caractère spécial parmi &#64;$!%*?&</p>
+        }
 
         <div class="mb-3">
           <label for="Password" class="form-label"
@@ -60,8 +67,14 @@
             class="form-control"
             id="PasswordChecking"
             aria-describedby="emailHelp"
+            (blur)="setPasswordCheck($event)"
+            required
           />
         </div>
+
+        @if(!matchingPasswords && passwordCheck !== "" && potentialPassword !== ""){
+          <p class="text-danger fst-italic text-center small">Les mots de passe ne correspondent pas!</p>
+        }
       }
 
       <div>

@@ -1,0 +1,208 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.8.6">
+  <diagram name="Page-1" id="upsdArOH7GlKlk4BVJuf">
+    <mxGraphModel dx="1975" dy="1333" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dStNwPK4B-hobUE02895-1" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="115" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-2" value="" style="endArrow=none;html=1;rounded=0;" parent="1" target="dStNwPK4B-hobUE02895-1" edge="1" source="dStNwPK4B-hobUE02895-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="800" as="sourcePoint" />
+            <mxPoint x="125" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-3" value="&lt;font style=&quot;font-size: 50px;&quot;&gt;CREATION DE COMPTE UTILISATEUR&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="255" y="50" width="920" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-4" value="Client Angular" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-5" value="API ASP .NET" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-6" value="Base de Données SQL Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-7" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="dStNwPK4B-hobUE02895-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="1240" as="sourcePoint" />
+            <mxPoint x="459.41" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-8" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="dStNwPK4B-hobUE02895-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="1240" as="sourcePoint" />
+            <mxPoint x="819.41" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-9" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="dStNwPK4B-hobUE02895-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="1240" as="sourcePoint" />
+            <mxPoint x="1179.4099999999999" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-11" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="280" as="sourcePoint" />
+            <mxPoint x="460" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-12" value="Saisit les données pour créer un nouvel utilisateur&lt;div&gt;Adresse mail, mot de passe,&amp;nbsp;&lt;/div&gt;&lt;div&gt;Vérification de mot de passe, Roles&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="146" y="244" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-13" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="519" as="sourcePoint" />
+            <mxPoint x="820" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-14" value="POST /api/Auth/register {email, password, roles}" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="495" y="490" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-15" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="567" as="sourcePoint" />
+            <mxPoint x="1180" y="568" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-16" value="SELECT * FROM AspNetUsers WHERE email = email" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="843" y="540" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-17" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="607" as="sourcePoint" />
+            <mxPoint x="820" y="607" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-18" value="Résultat (utilisateur trouvé ou non)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="893" y="582" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-19" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="1000" as="sourcePoint" />
+            <mxPoint x="460" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-20" value="Envoie un mail au titulaire du compte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="533" y="970" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="68" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-23" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="927" as="sourcePoint" />
+            <mxPoint x="460" y="927" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-24" value="201 Created" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="598" y="900" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-32" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="697" as="sourcePoint" />
+            <mxPoint x="460" y="697" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-33" value="400 Bad Request" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="586" y="670" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-34" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="725" as="sourcePoint" />
+            <mxPoint x="130" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-35" value="Notification d&#39;échec de la requête" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="198" y="700" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-36" value="Personnel du Parc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="70" y="128" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-1" value="Vérifie la correspondance entre le&amp;nbsp;&lt;div&gt;mot de passe&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;et la vérification de mot de passe&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="290" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-2" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="dStNwPK4B-hobUE02895-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="1240" as="sourcePoint" />
+            <mxPoint x="130" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-22" value="alt:&lt;div&gt;Les mots de passe ne&lt;/div&gt;&lt;div&gt;correspondent pas&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="58" y="320" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="459" y="409" as="sourcePoint" />
+            <mxPoint x="129" y="409" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-4" value="Affiche &quot;Les mots de passe ne correspondent pas&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="153" y="384" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dStNwPK4B-hobUE02895-31" value="else:&lt;div&gt;Les mots de passe correspondent&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="68" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-5" value="&lt;div&gt;alt:&lt;/div&gt;&lt;div&gt;Utilisateur trouvé&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="68" y="612" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-6" value="else:&lt;div&gt;Utilisateur non&amp;nbsp;&lt;/div&gt;&lt;div&gt;trouvé&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="770" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="857" as="sourcePoint" />
+            <mxPoint x="1180" y="858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-8" value="INSERT INTO AspNetUsers VALUES (Email, PasswordHash )" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="824" y="830" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="895" as="sourcePoint" />
+            <mxPoint x="820" y="895" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-10" value="Confirmation d&#39;insertion" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="923" y="870" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-11" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="1095" as="sourcePoint" />
+            <mxPoint x="130" y="1095" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-12" value="Notification de réussite d&#39;envoi du mail" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="179" y="1070" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-13" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="965" as="sourcePoint" />
+            <mxPoint x="130" y="965" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-14" value="Notification de réussite de création de compte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="163" y="940" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-16" value="&lt;div&gt;alt:&lt;/div&gt;&lt;div&gt;Réussite de l&#39;envoi du mail&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="69" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-17" value="else:&lt;div&gt;Échec de l&#39;envoi du mail&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="1215" as="sourcePoint" />
+            <mxPoint x="130" y="1215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMyY3R4pbH_ZR-BATuJ2-20" value="Notification d&#39;échec d&#39;envoi du mail" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="189" y="1190" width="210" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

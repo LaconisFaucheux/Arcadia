@@ -31,11 +31,24 @@ export class AdminChangePasswordComponent {
   public NewPasswordCheck = new FormControl('', [Validators.required])
   public RandomPassword = new FormControl('')
 
+  protected potentialPassword = "";
+  protected passwordCheck = "";
+  private passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
+  private _canSend = false;
+
+
+  protected matchingPasswords: boolean = false;
+  protected isPwdCompliant: boolean = false;
+
   submit() {
-    if (this.NewPassword.value !== this.NewPasswordCheck.value) {
-      alert('Le nouveau mot de passe et sa confirmation ne correspondent pas!');
-      return;
-    }
+    this._canSend = this.isPwdCompliant && this.matchingPasswords;
+    console.log(this._canSend)
+    if(!this._canSend) {return;}
+
+    // if (this.NewPassword.value !== this.NewPasswordCheck.value) {
+    //   alert('Le nouveau mot de passe et sa confirmation ne correspondent pas!');
+    //   return;
+    // }
 
     const user = this.authService.getUser();
     if (!user) return
@@ -78,6 +91,30 @@ export class AdminChangePasswordComponent {
     const pwd = this.userService.generatePassword()
     this.RandomPassword.setValue(pwd)
     return pwd;
+  }
+
+  public checkPassword() {
+    if (this.potentialPassword !== "") {
+      this.isPwdCompliant = this.passwordRegex.test(this.potentialPassword)
+    }
+
+    if(this.potentialPassword !== "" && this.passwordCheck !== "") {
+      this.matchingPasswords = this.potentialPassword === this.passwordCheck
+    }
+  }
+
+  public setPasswordCheck(event: any) {
+    if (event.target.value) {
+      this.passwordCheck = event.target.value
+      this.checkPassword()
+    }
+  }
+
+  public setPotentialPwd(event: any) {
+    if (event.target.value) {
+      this.potentialPassword = event.target.value
+      this.checkPassword()
+    }
   }
 
 }

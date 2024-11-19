@@ -126,7 +126,7 @@ export class UsersService {
     const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowerChars = "abcdefghijklmnopqrstuvwxyz";
     const digits = "0123456789";
-    const specialChars = "!@#$%^&*()-_=+[]{}|;:,.<>?/";
+    const specialChars = "@$!%*?&";
 
     const allChars = upperChars + lowerChars + digits + specialChars;
 
