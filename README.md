@@ -4,7 +4,7 @@ La partie Back (API) du projet Arcadia a été réalisé avec [ASP.NET 8](https:
 
 ## IDE
 
-Ce projet a été réalisé avec les IDE VS Code, Visual Studio 2022 et Rider (JetBrains).
+Ce projet a été réalisé avec les IDE VS Code, Webstorm (JetBrains), Visual Studio 2022 et Rider (JetBrains).
 
 ## Déploiement local
 
